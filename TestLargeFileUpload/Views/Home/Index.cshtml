@@ -1,0 +1,31 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<main>
+
+    @using (Html.BeginForm("Upload", "Home", FormMethod.Post,
+    new
+    {
+        enctype = "multipart/form-data",
+        id = "ImgForm",
+        name = "ImgForm",
+        target = "Upload"
+    }))
+    {
+
+        <div class="container">
+            <div class="col-md-12">
+                <h2>Test Large File Upload</h2>
+         
+                    <div class="form-group">
+                        <label for="file">File</label>
+                        <input type="file" class="form-control" id="file" name="file" />
+                    </div>
+                    <button type="submit" class="btn btn-primary">Upload</button>
+           
+            </div>
+        </div>
+    }
+
+    </main>

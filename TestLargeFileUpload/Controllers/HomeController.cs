@@ -58,6 +58,7 @@ namespace TestLargeFileUpload.Controllers
                     return RedirectToAction("Error");
                 }
 
+  
                 BlobServiceClient blobServiceClient = new BlobServiceClient(connectionString);
                 BlobContainerClient containerClient = blobServiceClient.GetBlobContainerClient(blobContainerName);
                 BlockBlobClient blockBlobClient = containerClient.GetBlockBlobClient(file.FileName);
@@ -84,9 +85,10 @@ namespace TestLargeFileUpload.Controllers
                     await blockBlobClient.CommitBlockListAsync(blockList);
                 }
 
-                return RedirectToAction("Success");
+                
+               return RedirectToAction("Index");
             }
-            catch
+            catch(Exception ex)
             {
                 return RedirectToAction("Error");
             }

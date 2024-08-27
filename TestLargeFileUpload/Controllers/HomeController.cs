@@ -86,7 +86,7 @@ namespace TestLargeFileUpload.Controllers
                 }
 
                 
-               return RedirectToAction("Index");
+               return RedirectToAction("Success");
             }
             catch(Exception ex)
             {
